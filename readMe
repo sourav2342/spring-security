@@ -1,0 +1,31 @@
+when we have added the spring security we observed
+
+1) all endpoints are secured and it is form based athentication which is build by default.
+2) access to login and logout forms.
+3) defalut password generated.
+
+we can add our own password by using spring security property
+"
+spring.security.user.password=demo@123
+"
+which will not shown the default generated password
+
+read about SpringBootWebSecurityConfiguration default config
+
+@EnableWebSecurity annotation is a powerful tool that enables developers
+to configure Spring Security for a web application.
+By using this annotation, developers can define the security rules and
+policies that govern access to the application's resources.
+
+@EnableWebSecurity in order to enable spring-security. But if you are
+using spring-boot 2.0 +, you do not need to add it by yourself because
+the spring-boot auto configuration will automatically do it for you if
+you forget to do so.
+
+must read :
+https://medium.com/@barbieri.santiago/basic-rest-api-security-with-spring-security-9f5d3a254af8#:~:text=Session%20Management,-.sessionManagement(session%20%2D&text=Setting%20the%20session%20creation%20policy,is%20not%20maintained%20between%20requests.
+
+if you open postman add credentials in authorization and look at console we see
+Authorization: Basic dXNlcjpkZW1vQDEyMw==
+which uses base64, this is a format where username and password is encodded as shown.
+if u use a base64 decoder online it gives the user:demo@123 as output.
