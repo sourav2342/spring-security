@@ -29,3 +29,12 @@ if you open postman add credentials in authorization and look at console we see
 Authorization: Basic dXNlcjpkZW1vQDEyMw==
 which uses base64, this is a format where username and password is encodded as shown.
 if u use a base64 decoder online it gives the user:demo@123 as output.
+
+adding Inmemoryuserdetailsservice which implments userdetailsservice
+error encountered without password encoder: java.lang.IllegalArgumentException: You have entered a password with no PasswordEncoder.
+ If that is your intent, it should be prefixed with `{noop}`.
+
+ Role based authorization
+
+ @PreAuthorize() - used when we want user with certain roles to access this endpoint
+ it checks authorization before executing a method and conditions needed to be true.
